@@ -1087,9 +1087,17 @@ Portfolio
 .our-portfolio .section-heading h2 {
   text-align: center;
   margin: 0px 90px 0px 90px;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 1;
+}
+
+.phone-info p, .phone-info a, .phone-info span{
+    color:white
+}
+
+.icon i {
+    color: white;
 }
 
 .our-portfolio .item {
@@ -1159,6 +1167,14 @@ Portfolio
 
 .our-portfolio .showed-content img {
   max-width: 100px;
+}
+
+.our-portfolio p {
+    font-size: 19px;
+}
+
+.our-portfolio p, .our-portfolio span  {
+    color: white;
 }
 
 
