@@ -935,8 +935,7 @@ Banner Style
   color: #fff;
 }
 
-
-.clients-satistait {
+.clients-satistait, .un-mot {
   background-image: url(../images/about-bg.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -944,8 +943,12 @@ Banner Style
   padding: 140px 0px 120px 0px;
 }
 
-.owl-clients p, .owl-clients span {
+.owl-clients p, .owl-clients span, .un-mot h2, .un-mot span, .un-mot p  {
   color: white;
+}
+
+.un-mot p  {
+  font-size: 1.5rem;
 }
 
 .owl-clients p {
@@ -1608,5 +1611,12 @@ responsive
   }
   .phone-info h4 span i {
     margin-left: 0px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .un-mot {
+    padding: 172px 0px 519px 0px;
   }
 }
