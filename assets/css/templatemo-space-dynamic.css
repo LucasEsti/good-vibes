@@ -936,6 +936,25 @@ Banner Style
 }
 
 
+.clients-satistait {
+  background-image: url(../images/about-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 140px 0px 120px 0px;
+}
+
+.owl-clients p, .owl-clients span {
+  color: white;
+}
+
+.owl-clients p {
+  font-size: 1.3rem;
+}
+
+.clients-satistait h2 {
+  text-align: center;
+}
 
 /* 
 ---------------------------------------------
@@ -944,7 +963,7 @@ About Us Style
 */
 
 #about {
-  margin-top: 120px;
+  margin-top: 0px;
 }
 
 .about-us {
