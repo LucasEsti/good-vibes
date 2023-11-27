@@ -31,7 +31,7 @@
 
 <body>
 
-    <div id="js-preloader" class="js-preloader">
+<!--    <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
       <span class="dot"></span>
       <div class="dots">
@@ -40,7 +40,7 @@
         <span></span>
       </div>
     </div>
-  </div>
+  </div>-->
   <!-- ***** Preloader End ***** -->
 
   <!-- ***** Header Area Start ***** -->
