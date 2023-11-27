@@ -287,7 +287,7 @@ get_header(); ?>
                   <li><i class="fa fa-users"></i> <?php the_author_meta( 'first_name' , $author_id ); ?></li>
                 </ul>
                 <a href="<?php echo get_permalink($the_last->ID); ?>"><h4><?php echo $the_last->post_title; ?></h4></a>
-                <?php echo $the_last->post_content; ?>
+                <p><?php the_field('extrait_description', $the_last->ID); ?></p>
                 <div class="main-blue-button">
                   <a href="<?php echo get_permalink($the_last->ID); ?>">En savoir plus</a>
                 </div>
@@ -309,7 +309,7 @@ get_header(); ?>
                         echo date_format($date,"d M Y");
                         ?></span>
                   <a href="<?php echo get_permalink($post->ID); ?>"><h4><?php echo $post->post_title; ?></h4></a>
-                  <?php echo $post->post_content; ?>
+                  <p><?php the_field('extrait_description', $post->ID); ?></p>
                 </div>
                 <div class="right-image">
                   <a href="<?php echo get_permalink($post->ID); ?>"><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" alt=""></a>
