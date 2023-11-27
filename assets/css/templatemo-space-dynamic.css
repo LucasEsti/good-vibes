@@ -135,6 +135,33 @@ img {
   overflow: hidden;
 }
 
+.news h1 {
+    position: relative;
+    margin-bottom: 50px;
+    color: #a2185b;
+}
+
+.news h1:before {
+    top: 48px;
+
+}
+.news h1:after {
+    top: 53px;
+    left:0;
+}
+.news h1:before, .news h1:after {
+    content: '';
+    position: absolute;
+    width: 176px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: #f18416;
+}
+
+.news i {
+    color: #f18416;
+}
+
 /* 
 ---------------------------------------------
 global styles
