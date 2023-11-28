@@ -128,55 +128,43 @@ get_header(); ?>
   </div>
 <?php endwhile; endif; ?>  
 
+<?php if( have_rows('clients') ): 
+     while( have_rows('clients') ): the_row(); ?>
   <div class="section clients-satistait">
     <div class="container">
       <div class="row mb-2">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <h2>Clients <em>satisfaits</em> </h2>
+            <h2><?php echo get_sub_field('titre'); ?> </h2>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="owl-clients owl-carousel owl-theme">
+            <?php 
+                foreach(get_sub_field('testimony') as $element): ?>
             <div class="item">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 mb-2">
                             <p><i class="fa fa-solid fa-quote-left"></i>
-                                Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...
+                                <?php echo $element["description"]; ?>
                             <i class="fa fa-solid fa-quote-right"></i></p>
                         </div>
                         <div class="col-12">
-                            <span>Lucas RAZAFINDRAMBOA</span><br>
-                            <span>webmaster</span>
+                            <span><?php echo $element["nom"]; ?></span><br>
+                            <span><?php echo $element["post"]; ?></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-12 mb-2">
-                          <p><i class="fa fa-solid fa-quote-left"></i>
-                              Lorem ipsum 2 dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...
-                          <i class="fa fa-solid fa-quote-right"></i></p>
-                      </div>
-                      <div class="col-12">
-                          <span>Eric RANDRIANTSALAM</span><br>
-                          <span>graphic designer</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            
+            <?php endforeach; ?>
         </div>
       </div>
     </div>
   </div>
-
-  
-
-
+<?php endwhile; endif; ?>  
 <?php get_footer(); ?>
 
 
