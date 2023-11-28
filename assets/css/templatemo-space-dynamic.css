@@ -1626,6 +1626,11 @@ responsive
 }
 
 @media (max-width: 767px) {
+    
+form #contact {
+  margin-left: 0px;
+  margin-right: 2px;
+}
   .about-us .left-image {
     bottom: -280px;
   }
