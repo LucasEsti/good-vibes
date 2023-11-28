@@ -60,6 +60,7 @@
               <li class="scroll-to-section"><a href="#about">Pourquoi Nous?</a></li>
               <li class="scroll-to-section"><a href="#services">A propos</a></li>
               <li class="scroll-to-section"><a href="#portfolio">Services</a></li>
+              
               <li class="scroll-to-section"><a href="#blog">News</a></li> 
               <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contactez-nous</a></div></li> 
             </ul>        

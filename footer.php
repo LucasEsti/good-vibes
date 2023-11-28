@@ -12,6 +12,81 @@
  */
 
 ?>
+<div id="blog" class="our-blog section tendance">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>Découvrez les <em>tendances</em> dans nos dernières <span>actualités</span></h2>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="top-dec">
+            <img src="<?php bloginfo("stylesheet_directory");  ?>/assets/images/blog-dec.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <?php 
+        $args = array(
+            'numberposts' => 4
+          );
+
+          $latest_posts = get_posts( $args );
+          $the_last = $latest_posts[0];
+        ?>
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a href="<?php echo get_permalink($the_last->ID); ?>">
+                <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($the_last->ID) ); ?>" alt="Workspace Desktop">
+            </a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i>  <?php
+                        $date=date_create($the_last->post_date);
+                        echo date_format($date,"d M Y");
+                        ?> </li>
+                  <?php $author_id = $the_last->post_author; ?>
+                  <li><i class="fa fa-users"></i> <?php the_author_meta( 'first_name' , $author_id ); ?></li>
+                </ul>
+                <a href="<?php echo get_permalink($the_last->ID); ?>"><h4><?php echo $the_last->post_title; ?></h4></a>
+                <p><?php the_field('extrait_description', $the_last->ID); ?></p>
+                <div class="main-blue-button">
+                  <a href="<?php echo get_permalink($the_last->ID); ?>">En savoir plus</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="right-list">
+            <ul>
+                <?php for ($i = 1; $i < count($latest_posts);$i++): 
+                    $post = $latest_posts[$i];
+                    ?>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> <?php
+                        $date=date_create($post->post_date);
+                        echo date_format($date,"d M Y");
+                        ?></span>
+                  <a href="<?php echo get_permalink($post->ID); ?>"><h4><?php echo $post->post_title; ?></h4></a>
+                  <p><?php the_field('extrait_description', $post->ID); ?></p>
+                </div>
+                <div class="right-image">
+                  <a href="<?php echo get_permalink($post->ID); ?>"><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" alt=""></a>
+                </div>
+              </li>
+              <?php endfor; ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div id="contact" class="contact-us section">
     <div class="container">
       <div class="row">
