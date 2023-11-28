@@ -45,6 +45,9 @@ get_header(); ?>
           </div>
         </div>
         <div class="col-lg-8 align-self-center">
+            <div class="mb-3">
+                <h1><?php echo get_sub_field('titre'); ?></h1>
+            </div>
           <div class="services">
             <div class="row">
                 <?php 

@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <?php // wp_head(); ?>
-    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo.webp">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('stylesheet_directory'); ?>/content/logo-good-vibes-academy.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -50,17 +50,26 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
               <img src="<?php bloginfo("stylesheet_directory");  ?>/content/logo-good-vibes-academy.png" alt="logo good-vibes-academy">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#about">Pourquoi Nous?</a></li>
-              <li class="scroll-to-section"><a href="#services">A propos</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">Services</a></li>
+                <?php 
+                        $menu_name = 'menu-principal';
+                        $menus = wp_get_nav_menu_items( $menu_name, array() );
+                        
+                        foreach($menus as $menu):
+                            ?>
+              <li class="scroll-to-section">
+                  <a href="<?php echo $menu->{'url'}; ?>" class="<?php if ($menu->{'object_id'} == get_queried_object_id()): ?>active<?php endif; ?>">
+                      <?php echo $menu->{'title'}; ?>
+                  </a>
+              </li>
               
+              <?php 
+                    endforeach; ?>
               <li class="scroll-to-section"><a href="#blog">News</a></li> 
               <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contactez-nous</a></div></li> 
             </ul>        

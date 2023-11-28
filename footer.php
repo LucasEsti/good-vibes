@@ -17,12 +17,12 @@
       <div class="row">
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="section-heading">
-            <h2>Découvrez les <em>tendances</em> dans nos dernières <span>actualités</span></h2>
+            <h2><?php echo get_field('titre_articles', 'option'); ?></h2>
           </div>
         </div>
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="top-dec">
-            <img src="<?php bloginfo("stylesheet_directory");  ?>/assets/images/blog-dec.png" alt="">
+            <img src="<?php echo get_field('image_article', 'option')["url"]; ?>" alt="">
           </div>
         </div>
       </div>
@@ -92,56 +92,26 @@
       <div class="row">
         <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
           <div class="section-heading">
-            <h2>N'hésitez pas à nous envoyer un message concernant les besoins de votre entreprise</h2>
+            <h2><?php echo get_field('titre_foot', 'option'); ?></h2>
             <div class="phone-info">
-              <h4>Pour toute demande, appelez-nous : <span><i class="fa fa-phone"></i> <a href="tel:261388532304">+261 38 85 323 04</a></span></h4>
+              <h4><?php echo get_field('description_foot', 'option'); ?></h4>
             </div>
             <div class="phone-info">
                 <p class="text-center">OU</p><br>
                 <p>
                         <i class="fa fa-solid fa-envelope"></i> 
-                        <a href="mailto:lalainaradorobivelo@good-vibes-academy.com">lalainaradorobivelo@good-vibes-academy.com</a>
-                    / <a href="mailto:informations@good-vibes-academy.com">informations@good-vibes-academy.com</a>
+                        <?php echo get_field('mail_foot', 'option'); ?>
+                        
                 </p><br>
                 <span>
-                    <i class="fa fa-solid fa-location-dot"></i> Villa Horphi 327 FM Bis Morondava Ambohibao
+                    <i class="fa fa-solid fa-location-dot"></i> <?php echo get_field('location_foot', 'option'); ?> 
                 </span>
             </div>
           </div>
         </div>
         <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
-          <form id="contact" action="" method="post">
-            <div class="row">
-              <div class="col-lg-6">
-                <fieldset>
-                  <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6">
-                <fieldset>
-                  <input type="surname" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>  
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="main-button ">Send Message</button>
-                </fieldset>
-              </div>
-            </div>
-            <div class="contact-dec">
-              <img src="assets/images/contact-decoration.png" alt="">
-            </div>
-          </form>
+            <?php echo do_shortcode('[contact-form-7 id="652c083" title="Contact form 1"]'); ?>
+            
         </div>
       </div>
     </div>
