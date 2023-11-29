@@ -997,6 +997,14 @@ Banner Style
   text-align: center;
 }
 
+.clients-satistait h2 {
+    color: white;
+}
+
+.clients-satistait h2 em {
+    color: #e3ab00;
+}
+
 /* 
 ---------------------------------------------
 About Us Style
@@ -1627,10 +1635,10 @@ responsive
 
 @media (max-width: 767px) {
     
-form #contact {
-  margin-left: 0px;
-  margin-right: 2px;
-}
+    form #contact {
+      margin-left: 0px;
+      margin-right: 2px;
+    }
   .about-us .left-image {
     bottom: -280px;
   }
